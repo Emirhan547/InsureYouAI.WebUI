@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="InsureYouAI.Business/InsureYouAI.Business.csproj" />
+  <Project Path="InsureYouAI.DataAccess/InsureYouAI.DataAccess.csproj" />
+  <Project Path="InsureYouAI.Entity/InsureYouAI.Entity.csproj" />
   <Project Path="InsureYouAI.WebUI/InsureYouAI.WebUI.csproj" />
 </Solution>
