@@ -7,7 +7,7 @@ using System.Text;
 
 namespace InsureYouAI.DataAccess.Repositories.AboutItemRepositories
 {
-    public class AboutItemRepository : GenericRepository<AboutItem>
+    public class AboutItemRepository : GenericRepository<AboutItem> ,IAboutItemRepository
     {
         public AboutItemRepository(AppDbContext context) : base(context)
         {

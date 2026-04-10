@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InsureYouAI.DataAccess.Repositories.ContactRepositories
+namespace InsureYouAI.DataAccess.Repositories.FeatureRepositories
 {
-    public class ContactRepository(AppDbContext context) : GenericRepository<Contact>(context),IContactRepository
+    public class FeatureRepository(AppDbContext context) : GenericRepository<Feature>(context), IFeatureRepository
     {
     }
 }

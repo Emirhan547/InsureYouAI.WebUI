@@ -7,7 +7,7 @@ using System.Text;
 
 namespace InsureYouAI.DataAccess.Repositories.PricingPlanRepositories
 {
-    public class PricingPlanRepository(AppDbContext context):GenericRepository<PricingPlan>(context)
+    public class PricingPlanRepository(AppDbContext context):GenericRepository<PricingPlan>(context),IPricingPlanRepository
     {
     }
 }

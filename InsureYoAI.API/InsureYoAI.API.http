@@ -1,0 +1,6 @@
+@InsureYoAI.API_HostAddress = http://localhost:5082
+
+GET {{InsureYoAI.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -4,19 +4,16 @@ using InsureYouAI.WebUI.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace InsureYouAI.WebUI.Migrations
+namespace InsureYouAI.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260409121208_mig2")]
-    partial class mig2
+    partial class AppDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,7 +22,7 @@ namespace InsureYouAI.WebUI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.About", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.About", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +47,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Abouts");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.AboutItem", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.AboutItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,7 +64,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("AboutItems");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Article", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Article", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +101,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Articles");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Category", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -121,7 +118,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Contact", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Contact", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -150,7 +147,36 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Message", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Feature", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IconUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Features");
+                });
+
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -185,7 +211,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Messages");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.PricingPlan", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.PricingPlan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -208,36 +234,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("PricingPlans");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Service", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("IconUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Services");
-                });
-
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Slider", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Slider", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -262,7 +259,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Sliders");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Testimonial", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Testimonial", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -291,7 +288,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("Testimonials");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.TrailerVideo", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.TrailerVideo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -316,9 +313,9 @@ namespace InsureYouAI.WebUI.Migrations
                     b.ToTable("TrailerVideos");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Article", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Article", b =>
                 {
-                    b.HasOne("InsureYouAI.WebUI.Entities.Category", "Category")
+                    b.HasOne("InsureYouAI.Entity.Entities.Category", "Category")
                         .WithMany("Articles")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -327,7 +324,7 @@ namespace InsureYouAI.WebUI.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("InsureYouAI.WebUI.Entities.Category", b =>
+            modelBuilder.Entity("InsureYouAI.Entity.Entities.Category", b =>
                 {
                     b.Navigation("Articles");
                 });

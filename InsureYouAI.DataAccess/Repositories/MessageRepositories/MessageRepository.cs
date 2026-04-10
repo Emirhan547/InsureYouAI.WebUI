@@ -7,7 +7,7 @@ using System.Text;
 
 namespace InsureYouAI.DataAccess.Repositories.MessageRepositories
 {
-    public class MessageRepository(AppDbContext context):GenericRepository<Message>(context)
+    public class MessageRepository(AppDbContext context):GenericRepository<Message>(context),IMessageRepository
     {
     }
 }

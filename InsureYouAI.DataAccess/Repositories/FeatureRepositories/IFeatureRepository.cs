@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InsureYouAI.Business.Services.FeatureRepositories
+namespace InsureYouAI.DataAccess.Repositories.FeatureRepositories
 {
     public interface IFeatureRepository:IRepository<Feature>
     {

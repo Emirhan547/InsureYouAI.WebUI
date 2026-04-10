@@ -7,7 +7,7 @@ using System.Text;
 
 namespace InsureYouAI.DataAccess.Repositories.CategoryRepositories
 {
-    public class CategoryRepository(AppDbContext context) : GenericRepository<Category>(context)
+    public class CategoryRepository(AppDbContext context) : GenericRepository<Category>(context),ICategoryRepository
     {
     }
 }

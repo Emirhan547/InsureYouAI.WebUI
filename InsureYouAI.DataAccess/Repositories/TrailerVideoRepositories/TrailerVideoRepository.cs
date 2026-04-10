@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InsureYouAI.Business.Services.FeatureRepositories
+namespace InsureYouAI.DataAccess.Repositories.TrailerVideoRepositories
 {
-    public class FeatureRepository(AppDbContext context):GenericRepository<Feature>(context)
+    public class TrailerVideoRepository(AppDbContext context) : GenericRepository<TrailerVideo>(context),ITrailerVideoRepository
     {
     }
 }

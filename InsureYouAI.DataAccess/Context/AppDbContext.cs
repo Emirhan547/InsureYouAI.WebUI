@@ -13,7 +13,7 @@ namespace InsureYouAI.WebUI.Context
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<PricingPlan> PricingPlans { get; set; }
-        public DbSet<Feature> Services { get; set; }
+        public DbSet<Feature> Features { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<TrailerVideo> TrailerVideos { get; set; }
